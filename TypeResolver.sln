@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{12764CFB-2CA3-44DB-9355-1CD38F32862F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{2F598AF0-B66A-4AD4-9D3E-D24D05371DE0}"
+	ProjectSection(SolutionItems) = preProject
+		BuildAssemblyReferences.ps1 = BuildAssemblyReferences.ps1
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeResolver", "TypeResolver\TypeResolver.csproj", "{BF2637F8-05F0-4119-9010-1E2C332A9B73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTypeResolver", "TestTypeResolver\TestTypeResolver.csproj", "{9045C003-C0D4-4ECF-92DA-B035D4EBA7D7}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs01
+		SccProjectUniqueName0 = TypeResolver\\TypeResolver.csproj
+		SccProjectTopLevelParentUniqueName0 = TypeResolver.sln
+		SccProjectName0 = TypeResolver
+		SccAuxPath0 = https://tfs.codeplex.com/tfs/tfs01
+		SccLocalPath0 = TypeResolver
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = TestTypeResolver\\TestTypeResolver.csproj
+		SccProjectTopLevelParentUniqueName1 = TypeResolver.sln
+		SccProjectName1 = TestTypeResolver
+		SccAuxPath1 = https://tfs.codeplex.com/tfs/tfs01
+		SccLocalPath1 = TestTypeResolver
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF2637F8-05F0-4119-9010-1E2C332A9B73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF2637F8-05F0-4119-9010-1E2C332A9B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF2637F8-05F0-4119-9010-1E2C332A9B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF2637F8-05F0-4119-9010-1E2C332A9B73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9045C003-C0D4-4ECF-92DA-B035D4EBA7D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9045C003-C0D4-4ECF-92DA-B035D4EBA7D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9045C003-C0D4-4ECF-92DA-B035D4EBA7D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9045C003-C0D4-4ECF-92DA-B035D4EBA7D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BF2637F8-05F0-4119-9010-1E2C332A9B73} = {2F598AF0-B66A-4AD4-9D3E-D24D05371DE0}
+		{9045C003-C0D4-4ECF-92DA-B035D4EBA7D7} = {12764CFB-2CA3-44DB-9355-1CD38F32862F}
+	EndGlobalSection
+EndGlobal

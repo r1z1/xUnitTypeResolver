@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF2637F8-05F0-4119-9010-1E2C332A9B73}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TypeResolver</RootNamespace>
+    <AssemblyName>TypeResolver</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>TypeResolver.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\TypeResolver.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\TypeResolver.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.abstractions.2.0.1\lib\net35\xunit.abstractions.dll</HintPath>
+      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="xunit.assert, Version=2.2.0.3545, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.assert.2.2.0\lib\netstandard1.1\xunit.assert.dll</HintPath>
+      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="xunit.core, Version=2.2.0.3545, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.extensibility.core.2.2.0\lib\netstandard1.1\xunit.core.dll</HintPath>
+      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="xunit.execution.desktop, Version=2.2.0.3545, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.extensibility.execution.2.2.0\lib\net452\xunit.execution.desktop.dll</HintPath>
+      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BindingCollection.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="Extensions\TypeExtensions.DescriptiveName.cs">
+      <DependentUpon>TypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\IProtectedTestCase.cs" />
+    <Compile Include="Internal\ITimeoutTestCase.cs" />
+    <Compile Include="Internal\TestCaseExtensions.cs" />
+    <Compile Include="Xunit.Extensions\IInstantiateInstanceData.cs" />
+    <Compile Include="Xunit.Extensions\InstantiateInstanceDataAttribute.cs" />
+    <Compile Include="Xunit.Extensions\StaFactAttribute.cs" />
+    <Compile Include="Xunit.Extensions\StaTheoryAttribute.cs" />
+    <Compile Include="Xunit.Extensions\TimeoutFactAttribute.cs" />
+    <Compile Include="Xunit.Extensions\TimeoutTheoryAttribute.cs" />
+    <Compile Include="Xunit.Sdk\DiscovererWrapper.cs" />
+    <Compile Include="Xunit.Sdk\GenericTheoryDiscoverer.cs" />
+    <Compile Include="Xunit.Sdk\GenericXunitTestCase.cs" />
+    <Compile Include="Xunit.Sdk\GenericXunitTheoryTestCase.cs" />
+    <Compile Include="Xunit.Sdk\TimeoutFactDiscoverer.cs" />
+    <Compile Include="Xunit.Sdk\TimeoutTheoryDiscoverer.cs" />
+    <Compile Include="Xunit.Sdk\TimeoutXunitTestCase.cs" />
+    <Compile Include="Xunit.Sdk\TimeoutXunitTheoryTestCase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Internal\UtilityExtensions.cs" />
+    <Compile Include="Internal\VisitorQueue`T.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Binding.cs" />
+    <Compile Include="Constraint.cs" />
+    <Compile Include="Constraint.RequiredBaseTypeConstraint.cs">
+      <DependentUpon>Constraint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Constraint.SimpleConstraint.cs">
+      <DependentUpon>Constraint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenericTypeResolver.cs" />
+    <Compile Include="GenericTypeResolver.private.cs">
+      <DependentUpon>GenericTypeResolver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IInstanceCreator.cs" />
+    <Compile Include="IInstanceCreator`T.cs" />
+    <Compile Include="InstanceCreator.cs" />
+    <Compile Include="InstanceCreator.ConstructorCreator`T.cs">
+      <DependentUpon>InstanceCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstanceCreator.DefaultConstructorCreator`T.cs">
+      <DependentUpon>InstanceCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstanceCreator.DelegateCreator`T.cs">
+      <DependentUpon>InstanceCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstanceCreator.InstanceCreatorBase`T.cs">
+      <DependentUpon>InstanceCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstanceCreator.MethodCreator`T.cs">
+      <DependentUpon>InstanceCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkList.cs" />
+    <Compile Include="LinkList.EmptyList.cs">
+      <DependentUpon>LinkList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkList.ValueList.cs">
+      <DependentUpon>LinkList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Permuter.cs" />
+    <Compile Include="TypeCreator.cs" />
+    <Compile Include="TypeCreator.private.cs">
+      <DependentUpon>TypeCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TypeCreator.WeakInstanceCreator.cs">
+      <DependentUpon>TypeCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TypeLoader.cs" />
+    <Compile Include="TypeLoader.private.cs">
+      <DependentUpon>TypeLoader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xunit.Extensions\ExcludeAssemblyAttribute.cs" />
+    <Compile Include="Xunit.Extensions\LimitInstanceDataAttribute.cs" />
+    <Compile Include="Xunit.Extensions\GenericTheoryAttribute.cs" />
+    <Compile Include="Xunit.Extensions\InstanceDataAttribute.cs" />
+    <Compile Include="Xunit.Extensions\MultiMemberDataAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Readme.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="TypeResolver.snk" />
+    <Content Include="License.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
